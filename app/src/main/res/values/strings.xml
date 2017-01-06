@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Sample-Unee-Android</string>
+    <string name="info_one">"A reliable marketplace just for students and all UNEEd in college."</string>
+    <string name="info_two">"Sell books and other things to get extra cash."</string>
+    <string name="info_three">"Find housing and internship."</string>
+    <string name="info_four">"Be connected with other students  and find a companion for sports and other."</string>
+    <string name="info_five">"Discover the world of Unee. Join our community."</string>
+    <string name="gender">Gender</string>
+    <string name="go_login">Go Login</string>
+    <string name="intrested_give_opinions">Intrested giving Opinions</string>
+    <string name="text_not_intrested_give_opinions">Not Intrested giving Opinions</string>
+</resources>

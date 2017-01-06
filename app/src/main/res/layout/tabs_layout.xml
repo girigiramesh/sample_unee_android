@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/tab_background"
+    android:orientation="horizontal"
+    android:paddingTop="4dp">
+
+    <LinearLayout
+        android:id="@+id/wishListRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="6dp">
+
+        <ImageView
+            android:id="@+id/wishlistIV"
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/wishlist_grey" />
+
+        <TextView
+            android:id="@+id/wishlistTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingBottom="4dp"
+            android:singleLine="true"
+            android:text="Wishlist"
+            android:textColor="#424242" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/messagesRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="6dp">
+
+        <ImageView
+            android:id="@+id/messagesIV"
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/messages_grey" />
+
+        <TextView
+            android:id="@+id/messagesTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal"
+            android:paddingBottom="4dp"
+            android:singleLine="true"
+            android:text="Messages"
+            android:textColor="#424242"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/postRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="6dp">
+
+        <ImageView
+            android:id="@+id/postIV"
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/post_grey" />
+
+        <TextView
+            android:id="@+id/postTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal"
+            android:paddingBottom="4dp"
+            android:singleLine="true"
+            android:text="Post"
+            android:textColor="#424242" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/activitiesRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="6dp">
+
+        <ImageView
+            android:id="@+id/activitiesIV"
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/activity_grey" />
+
+        <TextView
+            android:id="@+id/activiesTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal"
+            android:paddingBottom="4dp"
+            android:singleLine="true"
+            android:text="Activities"
+            android:textColor="#424242" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/myItemsRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="6dp">
+
+        <ImageView
+            android:id="@+id/myItemsIV"
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/sandwich_menu_grey" />
+
+        <TextView
+            android:id="@+id/myItemsTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal"
+            android:paddingBottom="4dp"
+            android:singleLine="true"
+            android:text="My Items"
+            android:textColor="#424242" />
+    </LinearLayout>
+
+</LinearLayout>
