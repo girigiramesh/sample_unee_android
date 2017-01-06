@@ -38,6 +38,7 @@ public class SignUpActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+//        buildToolBar();
 
         Util.setTypefaces(App.latoBoldTypeface, ((TextView) findViewById(R.id.displaySignUp)), ((TextView) findViewById(R.id.signInTV)));
         Util.setTypefaces(App.latoBoldTypeface, ((TextView) findViewById(R.id.gender_tv)));
@@ -56,7 +57,7 @@ public class SignUpActivity extends BaseActivity {
             public void onClick(View arg0) {
                 if (!isNetworkAvailable()) {
                     showToast("You're not connected to a Network..");
-                    return;
+                    signUPFlag = false;
                 }
                 if (((EditText) findViewById(R.id.user_name_et)).getText().toString().length() == 0) {
                     ((EditText) findViewById(R.id.user_name_et)).setError("Please Enter User Name.");
@@ -87,16 +88,18 @@ public class SignUpActivity extends BaseActivity {
                 }
                 if (((EditText) findViewById(R.id.confirm_password_et)).getText().toString().length() < 6) {
                     ((EditText) findViewById(R.id.confirm_password_et)).setError("Confirm Password is too short (minimum is 6 characters.");
+                    signUPFlag = false;
                 } else if (!((EditText) findViewById(R.id.passwordET)).getText().toString().equals(((EditText) findViewById(R.id.confirm_password_et)).getText().toString())) {
                     ((EditText) findViewById(R.id.confirm_password_et)).setError("Password and Confirm Password aren't Matched..");
+                    signUPFlag = false;
                 }
                 if (intrested_opinions_rg.getCheckedRadioButtonId() == -1) {
                     ((EditText) findViewById(R.id.confirm_password_et)).setError("Select intrested to give opinions!");
-                    return;
+                    signUPFlag = false;
                 }
                 if (gender_rg.getCheckedRadioButtonId() == -1) {
                     ((EditText) findViewById(R.id.confirm_password_et)).setError("Select gender!");
-                    return;
+                    signUPFlag = false;
                 }
 
                 if (signUPFlag) {
@@ -153,18 +156,18 @@ public class SignUpActivity extends BaseActivity {
             }
         });
     }
-    private void buildToolBar() {
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-
-        //Activity Icon
-        ImageView homeIcon = (ImageView) findViewById(R.id.homeIcon);
-        homeIcon.setBackgroundResource(R.drawable.back_arrow);
-
-        LinearLayout activityIconLL = (LinearLayout) findViewById(R.id.homeIconLL);
-        activityIconLL.setOnClickListener(homeIconListener);
-    }
+//    private void buildToolBar() {
+//        toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setDisplayShowTitleEnabled(false);
+//
+//        //Activity Icon
+//        ImageView homeIcon = (ImageView) findViewById(R.id.homeIcon);
+//        homeIcon.setBackgroundResource(R.drawable.back_arrow);
+//
+//        LinearLayout activityIconLL = (LinearLayout) findViewById(R.id.homeIconLL);
+//        activityIconLL.setOnClickListener(homeIconListener);
+//    }
 
     View.OnClickListener homeIconListener = new View.OnClickListener() {
         @Override

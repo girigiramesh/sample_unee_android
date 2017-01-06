@@ -6,8 +6,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 import com.sample_unee_android.App;
 import com.sample_unee_android.R;
@@ -27,11 +30,14 @@ import retrofit2.Response;
 
 public class SignInActivity extends BaseActivity {
     private boolean signUPFlag = true;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
+
+//        buildToolBar();
 
         Util.setTypefaces(App.latoBoldTypeface, (((TextView) findViewById(R.id.signUpTV))));
         Util.setTypefaces(App.latoLightTypeface, ((TextView) findViewById(R.id.newUserTV)), ((TextView) findViewById(R.id.forgot_pwd)));
@@ -42,8 +48,10 @@ public class SignInActivity extends BaseActivity {
         ((Button) findViewById(R.id.nextBTN)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
+                if (!isNetworkAvailable()) {
+                    showToast("You're not connected to a Network..");
+                    signUPFlag = false;
+                }
                 if (((EditText) findViewById(R.id.usernameET)).getText().toString().length() == 0) {
                     ((EditText) findViewById(R.id.usernameET)).setError("Please Enter Email.");
                     signUPFlag = false;
@@ -51,7 +59,6 @@ public class SignInActivity extends BaseActivity {
                     ((EditText) findViewById(R.id.usernameET)).setError("Sorry, but UNEE is an exclusive marketplace for students. Please include your university email.");
                     signUPFlag = false;
                 }
-
                 if (((EditText) findViewById(R.id.passwordET)).getText().toString().length() < 6) {
                     ((EditText) findViewById(R.id.passwordET)).setError("Password is too short (minimum is 6 characters.");
                     signUPFlag = false;
@@ -114,6 +121,21 @@ public class SignInActivity extends BaseActivity {
             }
         });
     }
+
+//    private void buildToolBar() {
+//        toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//
+//        getSupportActionBar().setDisplayShowTitleEnabled(false);
+//
+//        //Activity Icon
+//        ImageView homeIcon = (ImageView) findViewById(R.id.homeIcon);
+//        homeIcon.setBackgroundResource(R.drawable.back_arrow);
+//
+//        LinearLayout activityIconLL = (LinearLayout) findViewById(R.id.homeIconLL);
+//        activityIconLL.setOnClickListener(homeIconListener);
+//
+//    }
 
     View.OnClickListener homeIconListener = new View.OnClickListener() {
         @Override

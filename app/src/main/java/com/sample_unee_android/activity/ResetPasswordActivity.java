@@ -24,9 +24,9 @@ public class ResetPasswordActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.reset_password);
+
         Util.setTypefaces(App.latoBoldTypeface, ((Button) findViewById(R.id.reset_pwdBTN)));
         Util.setTypefaces(App.latoLightTypeface, ((EditText) findViewById(R.id.emailET)));
-
         Util.setTypefaces(App.latoLightTypeface, ((TextView) findViewById(R.id.emailSentTV)), (TextView) findViewById(R.id.resentPasswordInfoTV), ((TextView) findViewById(R.id.errorMsgTV)), ((TextView) findViewById(R.id.orTV)));
         Util.setTypefaces(App.latoBoldTypeface, ((TextView) findViewById(R.id.resetPwdTV)), (TextView) findViewById(R.id.resetPasswordTV), ((TextView) findViewById(R.id.signInTV)), ((TextView) findViewById(R.id.signUpTV)));
 
